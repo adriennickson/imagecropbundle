@@ -1,0 +1,10 @@
+services:
+    pitech_image_crop.form.type.crop_image:
+        class: Pitech\ImageCropBundle\Form\Type\CropImageType
+        arguments:
+            - "@pitech_image_crop.helper.image"
+        tags:
+            - { name: form.type, alias: 'pitech_image_crop_crop_image' }
+
+    pitech_image_crop.helper.image:
+        class: Pitech\ImageCropBundle\Helper\ImageHelper
