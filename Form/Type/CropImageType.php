@@ -27,7 +27,7 @@ class CropImageType extends AbstractType
             'required' => false,
         ]);
 
-        $builder->addEventListener(FormEvents::POST_SUBMIT, function (FormEvent $event) use ($saveOriginal) {
+        $builder->addEventListener(FormEvents::POST_SUBMIT, function (FormEvent $event) {
             $data = $event->getData();
 
             if ($data['file']) {
