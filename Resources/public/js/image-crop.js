@@ -1,4 +1,6 @@
-function pitechImageCrop_readUrl(input) {
+var imageCropFunctions = {};
+
+imageCropFunctions.readUrl = function(input) {
     if (input.files && input.files[0]) {
         if (input.files[0].type.match('image.*')) {
             var reader = new FileReader();
@@ -18,11 +20,11 @@ function pitechImageCrop_readUrl(input) {
             reader.readAsDataURL(input.files[0]);
         }
     }
-}
+};
 
 $(document).ready(function() {
     $("#pitech_image_crop_crop_file input").first().change(function() {
-        pitechImageCrop_readUrl(this);
+        imageCropFunctions.readUrl(this);
     });
 
     $("#pitech_image_crop_crop_file").closest('form').submit(function(e) {
