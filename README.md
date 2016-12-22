@@ -22,7 +22,7 @@ Then you need to add the following to your composer.json:
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@gitlab.pitechplus.com:rares.serban/ImageCropBundle.git"
+            "url": "https://gitlab.pitechplus.com/rares.serban/ImageCropBundle.git"
         }
     ]
 ```
