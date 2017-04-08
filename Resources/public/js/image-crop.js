@@ -14,6 +14,7 @@ imageCropFunctions.readUrl = function(input) {
                     image.attr('src', this.src);
                     image.show();
                     cropper = image.cropper();
+                    $("#pitech_image_crop_crop_rotate").show();
                 }
             }
 
@@ -27,9 +28,20 @@ $(document).ready(function() {
         imageCropFunctions.readUrl(this);
     });
 
+    $("#pitech_image_crop_crop_rotate .btn-pitech-crop-left").click(function(e) {
+        e.preventDefault();
+        $('#pitech_image_crop_crop_image').cropper('rotate', -45);
+    });
+
+    $("#pitech_image_crop_crop_rotate .btn-pitech-crop-right").click(function(e) {
+        e.preventDefault();
+        $('#pitech_image_crop_crop_image').cropper('rotate', 45);
+    });
+
     $("#pitech_image_crop_crop_file").closest('form').submit(function(e) {
         if($("#pitech_image_crop_crop_file input").first().val()) {
             var data = $('#pitech_image_crop_crop_image').cropper('getData');
+            console.log(data);
             $('#pitech_image_crop_crop_data input').first().val(JSON.stringify(data));
         }
     });

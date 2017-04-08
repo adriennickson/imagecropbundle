@@ -41,13 +41,18 @@ class ImageHelper
 
     private function doCrop($path, $destPath, $cropData, $srcFunc, $writeFunc, $imageQuality)
     {
-        $image = imagecrop($srcFunc($path), $this->getNormalizedCropData($cropData));
+        $data = $this->getNormalizedData($cropData);
+
+        $rotated = imagerotate($srcFunc($path), $data['rotate'], 0);
+        unset($data['rotate']);
+
+        $image = imagecrop($rotated, $data);
 
         $writeFunc($image, $destPath, $imageQuality);
         imagedestroy($image);
     }
 
-    private function getNormalizedCropData($cropData)
+    private function getNormalizedData($cropData)
     {
         $data = json_decode($cropData);
 
@@ -55,6 +60,7 @@ class ImageHelper
         $y = $data->y;
         $w = $data->width;
         $h = $data->height;
+        $r = $data->rotate;
 
         if ($x < 0) {
             $w = $w + $x;
@@ -66,11 +72,18 @@ class ImageHelper
             $y = 0;
         }
 
+        if ($r < 0) {
+            $r = -$r;
+        } else {
+            $r = 360 - $r;
+        }
+
         return [
             'x' => $x,
             'y' => $y,
             'width' => $w,
             'height' => $h,
+            'rotate' => $r,
         ];
     }
 }
