@@ -58,7 +58,7 @@ twig:
 
 # Features
 
-This bundle lets you resize (crop, zoom) images before uploading them to the server.To enable this functionality, in your form class, instead of using the default VichImageType form type for your image, you will have to use the type available in this bundle.The type has the same options as the vich image one.
+This bundle lets you resize (crop, zoom) and rotate images before uploading them to the server.To enable this functionality, in your form class, instead of using the default VichImageType form type for your image, you will have to use the type available in this bundle.The type has the same options as the vich image one.
 
 ```php
 $builder
