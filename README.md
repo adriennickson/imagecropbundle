@@ -17,7 +17,7 @@ Then you need to add the following to your composer.json:
 ```json
     "require": {
 		...,
-		"pitech/image-crop-bundle": "dev-master"
+		"pitech/image-crop-bundle": "1.0.0"
     },
     "repositories": [
         {
