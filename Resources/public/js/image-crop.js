@@ -41,7 +41,6 @@ $(document).ready(function() {
     $("#rares_image_crop_crop_file").closest('form').submit(function(e) {
         if($("#rares_image_crop_crop_file input").first().val()) {
             var data = $('#rares_image_crop_crop_image').cropper('getData');
-            console.log(data);
             $('#rares_image_crop_crop_data input').first().val(JSON.stringify(data));
         }
     });
