@@ -62,3 +62,5 @@ $builder
 ```
 
 And that's it!You can now edit images before uploading them and this bundle will take care of the rest.
+
+Make sure to take a look at the [demo](https://bitbucket.org/raresbundles/imagecropbundle/branch/demo) branch for an example on how to use this bundle.
