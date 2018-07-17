@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+
+    <link href="{{ asset('css/cropper.min.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/cropper.min.js') }}"></script>
+
+    <script src="{{ asset('bundles/raresimagecrop/js/image-crop.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    {% if image.imageName %}
+        <img src="{{ vich_uploader_asset(image, 'imageFile') }}" alt="{{ image.imageName }}" />
+    {% endif %}
+
+    {{ form_start(form) }}
+    
+        {{ form_row(form.imageFile) }}
+    
+        <button type="submit">Save</button>
+    {{ form_end(form) }}
+{% endblock %}
