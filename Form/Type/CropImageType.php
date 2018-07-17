@@ -36,7 +36,7 @@ class CropImageType extends AbstractType
 
     public function getBlockPrefix()
     {
-        return 'Rares_image_crop_crop_image';
+        return 'rares_image_crop_crop_image';
     }
 
     public function getParent()
