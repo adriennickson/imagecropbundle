@@ -1,7 +1,7 @@
-{% block pitech_image_crop_crop_image_widget %}
+{% block rares_image_crop_crop_image_widget %}
     {% spaceless %}
         <div class="vich-image">
-            <span id="pitech_image_crop_crop_file">
+            <span id="rares_image_crop_crop_file">
                 {{ form_widget(form.file) }}
             </span>
 
@@ -14,7 +14,7 @@
                 <a href="{{ download_uri }}"></a>
             {% endif %}
 
-            <img id="pitech_image_crop_crop_image" style="max-width:100%;{% if not has_uri %}display:none{% endif %}"
+            <img id="rares_image_crop_crop_image" style="max-width:100%;{% if not has_uri %}display:none{% endif %}"
                  src="{% if has_uri %}{{ download_uri }}{% endif %}" alt=""
             />
 
@@ -26,12 +26,12 @@
                 <a href="{{ download_uri }}">{{ 'download'|trans({}, 'VichUploaderBundle') }}</a>
             {% endif %}
 
-            <div id="pitech_image_crop_crop_rotate" style="display: none;">
-                <button class="btn btn-primary btn-pitech-crop-left" style="float: left;"><span class="fa fa-rotate-left"></span></button>
-                <button class="btn btn-primary btn-pitech-crop-right" style="float: right;"><span class="fa fa-rotate-right"></span></button>
+            <div id="rares_image_crop_crop_rotate" style="display: none;">
+                <button class="btn btn-primary btn-rares-crop-left" style="float: left;"><span class="fa fa-rotate-left"></span></button>
+                <button class="btn btn-primary btn-rares-crop-right" style="float: right;"><span class="fa fa-rotate-right"></span></button>
             </div>
 
-            <span id="pitech_image_crop_crop_data">
+            <span id="rares_image_crop_crop_data">
                 {{ form_row(form.imageData) }}
             </span>
         </div>

@@ -1,8 +1,8 @@
 <?php
 
-namespace Pitech\ImageCropBundle\Form\Type;
+namespace Rares\ImageCropBundle\Form\Type;
 
-use Pitech\ImageCropBundle\Helper\ImageHelper;
+use Rares\ImageCropBundle\Helper\ImageHelper;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -36,7 +36,7 @@ class CropImageType extends AbstractType
 
     public function getBlockPrefix()
     {
-        return 'pitech_image_crop_crop_image';
+        return 'Rares_image_crop_crop_image';
     }
 
     public function getParent()

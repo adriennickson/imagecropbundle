@@ -1,5 +1,5 @@
 # Overview
-The ImageCropBundle is a bundle for Symfony 3 that lets you crop images before uploading them.
+The ImageCropBundle is a bundle for Symfony 3.4 / 4 that lets you crop images before uploading them.
 It uses the Cropper jQuery library and integrates with VichUploaderBundle.
 
 # Installation
@@ -12,26 +12,18 @@ Make sure that you include the css and js files from Cropper in your template:
 <script src="{{ asset('js/cropper.min.js') }}"></script>
 ```
 
-Then you need to add the following to your composer.json:
+Then you need to require the bundle in Composer:
 
-```json
-    "require": {
-		...,
-		"pitech/image-crop-bundle": "1.0.0"
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://gitlab.pitechplus.com/rares.serban/ImageCropBundle.git"
-        }
-    ]
 ```
+    composer require "rares/image-crop-bundle"
+```
+
 Then enable the bundle in your AppKernel file:
 
 ```php
 $bundles = [
 	...,
-	new Pitech\ImageCropBundle\PitechImageCropBundle(),
+	new Rares\ImageCropBundle\RaresImageCropBundle(),
 ];
 ```
 
@@ -44,7 +36,7 @@ bin/console assets:install --symlink
 Then you need to include the script file provided with this bundle in your template:
 
 ```twig
-<script src="{{ asset('bundles/pitechimagecrop/js/image-crop.js') }}"></script>
+<script src="{{ asset('bundles/raresimagecrop/js/image-crop.js') }}"></script>
 ```
 
 Also, you need to configure twig to use the form theme defined in this bundle and also have vich uploader configured for an entity.
@@ -53,7 +45,7 @@ Also, you need to configure twig to use the form theme defined in this bundle an
 twig:
     form_themes:
         - 'VichUploaderBundle:Form:fields.html.twig'
-        - 'PitechImageCropBundle:Form:fields.html.twig'
+        - 'RaresImageCropBundle:Form:fields.html.twig'
 ```
 
 # Features

@@ -1,6 +1,6 @@
 <?php
 
-namespace Pitech\ImageCropBundle\Helper;
+namespace Rares\ImageCropBundle\Helper;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 

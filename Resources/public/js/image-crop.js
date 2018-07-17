@@ -10,11 +10,11 @@ imageCropFunctions.readUrl = function(input) {
                 imageFile.src = e.target.result;
 
                 imageFile.onload = function() {
-                    var image = $('#pitech_image_crop_crop_image');
+                    var image = $('#rares_image_crop_crop_image');
                     image.attr('src', this.src);
                     image.show();
                     cropper = image.cropper();
-                    $("#pitech_image_crop_crop_rotate").show();
+                    $("#rares_image_crop_crop_rotate").show();
                 }
             }
 
@@ -24,25 +24,25 @@ imageCropFunctions.readUrl = function(input) {
 };
 
 $(document).ready(function() {
-    $("#pitech_image_crop_crop_file input").first().change(function() {
+    $("#rares_image_crop_crop_file input").first().change(function() {
         imageCropFunctions.readUrl(this);
     });
 
-    $("#pitech_image_crop_crop_rotate .btn-pitech-crop-left").click(function(e) {
+    $("#rares_image_crop_crop_rotate .btn-rares-crop-left").click(function(e) {
         e.preventDefault();
-        $('#pitech_image_crop_crop_image').cropper('rotate', -45);
+        $('#rares_image_crop_crop_image').cropper('rotate', -45);
     });
 
-    $("#pitech_image_crop_crop_rotate .btn-pitech-crop-right").click(function(e) {
+    $("#rares_image_crop_crop_rotate .btn-rares-crop-right").click(function(e) {
         e.preventDefault();
-        $('#pitech_image_crop_crop_image').cropper('rotate', 45);
+        $('#rares_image_crop_crop_image').cropper('rotate', 45);
     });
 
-    $("#pitech_image_crop_crop_file").closest('form').submit(function(e) {
-        if($("#pitech_image_crop_crop_file input").first().val()) {
-            var data = $('#pitech_image_crop_crop_image').cropper('getData');
+    $("#rares_image_crop_crop_file").closest('form').submit(function(e) {
+        if($("#rares_image_crop_crop_file input").first().val()) {
+            var data = $('#rares_image_crop_crop_image').cropper('getData');
             console.log(data);
-            $('#pitech_image_crop_crop_data input').first().val(JSON.stringify(data));
+            $('#rares_image_crop_crop_data input').first().val(JSON.stringify(data));
         }
     });
 });

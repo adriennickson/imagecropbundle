@@ -1,10 +1,10 @@
 services:
-    pitech_image_crop.form.type.crop_image:
-        class: Pitech\ImageCropBundle\Form\Type\CropImageType
+    rares_image_crop.form.type.crop_image:
+        class: Rares\ImageCropBundle\Form\Type\CropImageType
         arguments:
-            - "@pitech_image_crop.helper.image"
+            - "@rares_image_crop.helper.image"
         tags:
-            - { name: form.type, alias: 'pitech_image_crop_crop_image' }
+            - { name: form.type, alias: 'rares_image_crop_crop_image' }
 
-    pitech_image_crop.helper.image:
-        class: Pitech\ImageCropBundle\Helper\ImageHelper
+    rares_image_crop.helper.image:
+        class: Rares\ImageCropBundle\Helper\ImageHelper
